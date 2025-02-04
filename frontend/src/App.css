@@ -1,0 +1,154 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+
+body {
+  color: rgb(245, 242, 242);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.card-label {
+  color: #c48e5c; 
+}
+
+.wrapper {
+  width: 450px;
+  padding: 30px;
+  background-color: #FFE6A9;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* 陰影效果 */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* 添加過渡效果 */
+}
+
+.create-form {
+  height: 40px;
+  width: 100%;
+  margin: 25px 0px;
+  border: 3px solid #c28c59;
+  border-radius: 3px;
+  display: flex;
+}
+
+.create-form > input {
+  outline: none;
+  border: none;
+  background: transparent;
+  color: rgb(135, 135, 135);
+  width: 100%;
+  height: 100%;
+  padding-left: 5px;
+}
+
+.create-form > button {
+  border: none;
+  background:#c28c59;
+  color: white;
+  width: 50px;
+  height: 100%;
+  cursor: pointer;
+}
+
+.create-form > button:hover {
+  background:#ca9767; /* 懸停時變化的背景色 */
+}
+
+.todo-item {
+  background-color: #DEAA79;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.completed {
+  opacity: 0.4;
+  text-decoration: line-through 3px #b57d49;
+}
+
+.part-button {
+  background-color: rgb(158, 155, 155);
+  color: white;
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.part-button:hover {
+  background-color: rgb(176, 173, 173);
+}
+
+.part-button.active {
+  background-color: #DEAA79;
+}
+
+/* 美化 Save 和 Cancel 按鈕的基礎樣式 */
+.edit-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-flex; /* 使用 Flexbox 來對齊內容 */
+  justify-content: center; /* 水平置中 */
+  align-items: center; /* 垂直置中 */
+  text-align: center;
+  line-height: 1; /* 確保文字高度不超出按鈕 */
+}
+
+/* Save 按鈕樣式 */
+.edit-btn[type="submit"] {
+  background-color: #6d7a60; /* 綠色背景 */
+  color: white; /* 白色字體 */
+}
+
+.edit-btn[type="submit"]:hover {
+  background-color:  #849374; /* 深綠色背景 */
+}
+
+/* Cancel 按鈕樣式 */
+.edit-btn[type="button"] {
+  background-color:#94403a; /* 紅色背景 */
+  color: white; /* 白色字體 */
+}
+
+.edit-btn[type="button"]:hover {
+  background-color: #be554d; /* 深紅色背景 */
+}
+
+.logout-button {
+  position: absolute; /* 讓按鈕浮動 */
+  top: 20px; /* 距離頂部的間距 */
+  right: 20px; /* 距離右側的間距 */
+  background-color: #58644b; /* 按鈕背景色 */
+  color: white; /* 按鈕文字顏色 */
+  border: none; /* 移除按鈕邊框 */
+  padding: 10px 20px; /* 內邊距 */
+  font-size: 16px; /* 字體大小 */
+
+  border-radius: 5px; /* 圓角邊框 */
+  cursor: pointer; /* 滑鼠懸停時顯示為手型 */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* 陰影效果 */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* 添加過渡效果 */
+}
+
+.logout-button:hover {
+  background-color: #505b43; /* 懸停時的背景色 */
+  transform: scale(1.05); /* 懸停時放大效果 */
+}

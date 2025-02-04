@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #B1C29E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+  }
+  
+  .login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+  }
+  
+  .login-card {
+    background-color: #659287;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* 陰影效果 */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* 添加過渡效果 */
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: white;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #f1f1f1;
+  }
+  
+  input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #51746b;
+    border-radius: 8px;
+    background-color: #659287;
+    color: white;
+    font-size: 16px;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #7cada1;
+  }
+  
+  .login-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #d39860;
+    color: #2f3e4c;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background-color: #DEAA79;
+  }
+  
+  @media (max-width: 480px) {
+    .login-container {
+      padding: 10px;
+    }
+    
+    .login-card {
+      padding: 20px;
+    }
+  }
+  
