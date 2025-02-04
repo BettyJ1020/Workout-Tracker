@@ -13,9 +13,10 @@ function CreateForm({ fetchTodos, selectedPart }) {
       if (!userId) {
         throw new Error("User ID not found in localStorage");
       }
-  
+      
+      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL; 
       // 發送 POST 請求到 /todos/
-      await fetch("http://localhost:8000/todos/", {
+      await fetch(`${API_BASE_URL}/todos/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

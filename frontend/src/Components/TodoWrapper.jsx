@@ -21,9 +21,9 @@ function TodoWrapper() {
         console.warn("User ID not found in localStorage");
         return; // 如果 userId 不存在，直接返回
       }
-
+      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
       const response = await fetch(
-        `http://localhost:8000/todos/?user_id=${userId}`
+        `${API_BASE_URL}/todos/?user_id=${userId}`
       );
       // console.log("Response status:", response.status); // 檢查 HTTP 狀態碼
 
@@ -50,8 +50,8 @@ function TodoWrapper() {
       if (!userId) {
         throw new Error("User ID not found in localStorage");
       }
-
-      await fetch(`http://localhost:8000/todos/${id}`, {
+      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+      await fetch(`${API_BASE_URL}/todos/${id}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       });
@@ -74,8 +74,8 @@ function TodoWrapper() {
         ...updatedTodo,
         user_id: parseInt(userId), // 添加 user_id 並轉換為整數
       };
-
-      const response = await fetch(`http://localhost:8000/todos/${id}`, {
+      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+      const response = await fetch(`${API_BASE_URL}/todos/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -111,7 +111,8 @@ function TodoWrapper() {
 
   const toggleCompleted = async (id) => {
     try {
-      await fetch(`http://localhost:8000/todos/${id}/toggle`, {
+      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+      await fetch(`${API_BASE_URL}/todos/${id}/toggle`, {
         method: "PATCH", // 僅針對 isCompleted 更新
       });
 

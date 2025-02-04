@@ -10,7 +10,8 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8000/api/login", {
+      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+      const response = await fetch(`${API_BASE_URL}/api/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -26,7 +27,7 @@ const LoginPage = () => {
         }
 
         // 檢查並初始化 Workout Routine
-        await fetch(`http://localhost:8000/api/init_workout/?user_id=${data.userId}`, {
+        await fetch(`${API_BASE_URL}/?user_id=${data.userId}`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
         });
