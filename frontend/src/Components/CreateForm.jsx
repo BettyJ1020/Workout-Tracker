@@ -14,7 +14,8 @@ function CreateForm({ fetchTodos, selectedPart }) {
         throw new Error("User ID not found in localStorage");
       }
       
-      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL; 
+      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL; // 使用 Vite 的環境變數
+ 
       // 發送 POST 請求到 /todos/
       await fetch(`${API_BASE_URL}/todos/`, {
         method: "POST",

@@ -21,7 +21,8 @@ function TodoWrapper() {
         console.warn("User ID not found in localStorage");
         return; // 如果 userId 不存在，直接返回
       }
-      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL; // 使用 Vite 的環境變數
+
       const response = await fetch(
         `${API_BASE_URL}/todos/?user_id=${userId}`
       );
@@ -50,7 +51,8 @@ function TodoWrapper() {
       if (!userId) {
         throw new Error("User ID not found in localStorage");
       }
-      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL; // 使用 Vite 的環境變數
+
       await fetch(`${API_BASE_URL}/todos/${id}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
@@ -74,7 +76,8 @@ function TodoWrapper() {
         ...updatedTodo,
         user_id: parseInt(userId), // 添加 user_id 並轉換為整數
       };
-      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL; // 使用 Vite 的環境變數
+
       const response = await fetch(`${API_BASE_URL}/todos/${id}`, {
         method: "PUT",
         headers: {
@@ -111,7 +114,8 @@ function TodoWrapper() {
 
   const toggleCompleted = async (id) => {
     try {
-      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL; // 使用 Vite 的環境變數
+
       await fetch(`${API_BASE_URL}/todos/${id}/toggle`, {
         method: "PATCH", // 僅針對 isCompleted 更新
       });
